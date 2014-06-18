@@ -1,9 +1,7 @@
 from .base import *     # noqa
 import dj_database_url
 
-DEBUG = True
-
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = get_env_var('DJANGO_SECRET_KEY')
 
 DATABASES['default'] = dj_database_url.config()
 
