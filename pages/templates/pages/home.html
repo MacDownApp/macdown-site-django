@@ -15,14 +15,16 @@
 
 <header>
   <div class="row">
-    <div class="medium-offset-1 medium-4 columns">
-      <img class="logo" src="{% static 'base/img/logo.png' %}">
-    </div>
-    <div class="medium-7 columns">
-      {% blocktrans %}
-        <h1 class="title">MacDown</h1>
-        <p>The open source Markdown editor for OS X.</p>
-      {% endblocktrans %}
+    <div class="medium-offset-2 medium-8 columns">
+      <div class="logo-block">
+        <img class="logo" src="{% static 'base/img/logo.png' %}">
+      </div>
+      <div class="title-block">
+        {% blocktrans %}
+          <div class="title">MacDown</div>
+          <p>The open source Markdown editor for OS X.</p>
+        {% endblocktrans %}
+      </div>
     </div>
   </div>
 </header>

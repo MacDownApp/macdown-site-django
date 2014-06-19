@@ -3,25 +3,42 @@ header {
     padding-top: 22px;
     margin-bottom: 30px;
 }
+.logo-block, .title-block {
+    float: left;
+}
+.logo-block {
+    width: 300px;
+}
 .title {
     font-weight: bold;
-    padding-top: 70px;
+    font-size: 300%;
+    padding-top: 90px;
+    margin-bottom: 0.25em;
 }
 .logo {
     height: 256px;
 }
+@media (max-width: 968px) {
+    .logo-block, .title-block {
+        float: none;
+        width: 100%;
+    }
+    .title-block {
+        text-align: center;
+    }
+    .title {
+        padding: 0;
+    }
+}
+
+
 .content {
     margin-top: 1em;
     text-align: justify;
 }
-.content img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 img {
-    margin-top: 10px;
-    margin-bottom: 30px;
+    display: block;
+    margin: 10px auto 30px auto;
     max-width: 100%;
 }
 .squeeze {
