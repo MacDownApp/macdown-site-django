@@ -21,7 +21,9 @@
 <nav class="top-bar" data-topbar>
   <section class="top-bar-section">
     <ul class="right">
-      <li class="active"><a href="#">{% trans 'Download MacDown' %}</a></li>
+      {% if latest_version %}
+      <li class="active"><a href="{{ latest_version.update_url }}">{% trans 'Download MacDown' %}</a></li>
+      {% endif %}
       <li><a href="https://uranusjr.com">{% trans 'Visit Author Site' %} <span class="fi-arrow-right"></span></a></li>
     </ul>
     <ul class="left">
