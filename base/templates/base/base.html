@@ -13,6 +13,7 @@
 {% static 'base/img/logo.png' as og_image_url %}
 <meta property="og:image"
     content="{% block og_image %}{% absolute_uri og_image_url %}{% endblock %}">
+{% include 'analytics.html' %}
 {% endblock %}
 
 
