@@ -1,8 +1,16 @@
 https://www.djangoproject.com/download/1.7.b4/tarball/
 git+https://github.com/kennethreitz/dj-static.git
+git+https://github.com/uranusjr/django-sparkle-external.git
 dj-database-url==0.3.0
+django-absolute==0.3
+django-appconf==0.6
+django-ghostdown==0.3.1
+django-grappelli==2.5.3
 django-toolbelt==0.0.1
 gunicorn==19.0.0
+Markdown==2.4.1
 psycopg2==2.5.3
 pystache==0.5.4
+six==1.7.2
 static==1.0.2
+static3==0.5.1
