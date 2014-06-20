@@ -45,6 +45,18 @@ img {
     margin-top: -16px;
     margin-bottom: -27px;
 }
+.link-block {
+    margin-top: 2em;
+    text-align: center;
+}
+.download.button {
+    font-size: 110%;
+    font-weight: bold;
+}
+.download.button .sub {
+    font-size: 70%;
+    font-weight: normal;
+}
 footer {
     background: #333;
     color: #fff;

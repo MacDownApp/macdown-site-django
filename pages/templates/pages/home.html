@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% load i18n staticfiles %}
+{% load i18n staticfiles base_tags %}
 
 
 {% block extra_css %}
@@ -21,8 +21,8 @@
       </div>
       <div class="title-block">
         {% blocktrans %}
-          <div class="title">MacDown</div>
-          <p>The open source Markdown editor for OS X.</p>
+        <div class="title">MacDown</div>
+        <p>The open source Markdown editor for OS X.</p>
         {% endblocktrans %}
       </div>
     </div>
@@ -85,6 +85,17 @@
     <h3>I Want Feature X. Why Didn’t You Implement It?</h3>
 
     <p>Well, this is still a very young project, and I only implemented the features I need. Please feel free to offer any advices in the issue section on GitHub, or send me a pull request with your implementation. This is what open source is about, isn’t it? :D</p>
+
+    {% if latest_version %}
+    <div class="link-block">
+      <a href="{{ latest_version.update_url }}" class="download button">
+      {% blocktrans with version=latest_version size=latest_version.length|volumize %}
+      Download MacDown<br>
+      <span class="sub">{{ version }}, {{ size }}</span>
+      {% endblocktrans %}
+      </a>
+    </div>
+    {% endif %}
   </div>
 </div>
 
