@@ -57,14 +57,3 @@ img {
     font-size: 70%;
     font-weight: normal;
 }
-footer {
-    background: #333;
-    color: #fff;
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 80%;
-}
-footer > div {
-    text-align: center;
-}

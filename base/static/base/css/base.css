@@ -4,3 +4,24 @@
     margin: auto 1em;
     text-align: center;
 }
+footer {
+    background: #333;
+    color: #fff;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 80%;
+}
+footer > div {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer .links > span:after {
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}
+footer .links > span:last-child:after {
+    content: none;
+}
