@@ -10,6 +10,12 @@
 
 {% block title %}{% blocktrans %}MacDown: The open source Markdown editor for OS X.{% endblocktrans %}{% endblock %}
 
+{% block extra_head %}
+{{ block.super }}
+<meta property="og:description"
+    content="{% trans 'MacDown is an open source Markdown editor for OS X, released under the MIT License.' %}">
+{% endblock %}
+
 
 {% block content %}
 
