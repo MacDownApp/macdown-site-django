@@ -1,7 +1,7 @@
-from django.db import models
+from sparkle.models.managers import VersionManager
 
 
-class MacDownVersionManager(models.Manager):
+class MacDownVersionManager(VersionManager):
     def get_queryget(self):
         qs = super(MacDownVersionManager, self).get_queryget()
         qs = qs.filter(application__slug='macdown')
