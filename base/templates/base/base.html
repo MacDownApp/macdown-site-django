@@ -2,6 +2,8 @@
 
 {% load i18n staticfiles base_tags %}
 
+{% block title %}{% blocktrans %}MacDown: The open source Markdown editor for OS X.{% endblocktrans %}{% endblock %}
+
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css">
@@ -14,6 +16,8 @@
 <meta property="og:image"
     content="{% block og_image %}{% absolute_uri og_image_url %}{% endblock %}">
 {% include 'base/includes/analytics.html' %}
+<meta property="og:description"
+    content="{% block description %}{% trans 'MacDown is an open source Markdown editor for OS X, released under the MIT License.' %}{% endblock %}">
 {% endblock %}
 
 
@@ -29,6 +33,7 @@
     </ul>
     <ul class="left">
       <li><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a></li>
+      <li><a href="{% url 'pages:faq' %}">{% trans 'FAQ' %}</a></li>
     </ul>
   </section>
 </nav>

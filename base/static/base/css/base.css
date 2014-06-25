@@ -1,8 +1,14 @@
-.top-bar .left a {
-    font-weight: bold;
-    font-size: 110%;
-    margin: auto 1em;
+.top-bar .left {
+    margin-left: 1.5em;
+}
+.top-bar .left li a {
     text-align: center;
+    font-size: 110%;
+}
+.top-bar .left li:first-child a {
+    font-weight: bold;
+    padding-left: 0.5em;
+    margin: auto 0.5em;
 }
 footer {
     background: #333;

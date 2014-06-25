@@ -1,19 +1,11 @@
-{% extends 'base/base.html' %}
+{% extends 'pages/base.html' %}
 
-{% load i18n staticfiles base_tags %}
+{% load i18n staticfiles %}
 
 
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/css/home.css' %}">
-{% endblock %}
-
-{% block title %}{% blocktrans %}MacDown: The open source Markdown editor for OS X.{% endblocktrans %}{% endblock %}
-
-{% block extra_head %}
-{{ block.super }}
-<meta property="og:description"
-    content="{% trans 'MacDown is an open source Markdown editor for OS X, released under the MIT License.' %}">
 {% endblock %}
 
 
@@ -78,30 +70,7 @@
 
     <p>I am spoiled, as a programmer, by some pretty advanced auto-completion various IDEs offer. I implemented MacDown’s auto-completion to suit my own need. Hope it suits you too—or you can turn it off if you wish to.</p>
 
-    <h2>FAQ</h2>
-
-    <h3>Why Didn’t You Use Swift?</h3>
-
-    <p>MacDown was initiated three days after Apple announced Swift. While it is truely a nice language, <a href="http://swiftwtf.tumblr.com">I do not think it is quite production-ready yet</a>. I would very much like to use it in the future, though.</p>
-
-    <h3>Why OS X?</h3>
-
-    <p>I am a cross-platform developer, and chould have implemented the whole thing with a cross-platform framework. But those frameworks usually feel alient, especially on OS X. I might port this if there’s time, though. Still considering options.</p>
-
-    <h3>I Want Feature X. Why Didn’t You Implement It?</h3>
-
-    <p>Well, this is still a very young project, and I only implemented the features I need. Please feel free to offer any advices in the issue section on GitHub, or send me a pull request with your implementation. This is what open source is about, isn’t it? :D</p>
-
-    {% if latest_version %}
-    <div class="link-block">
-      <a href="{{ latest_version.get_absolute_url }}" class="download button">
-      {% blocktrans with version=latest_version size=latest_version.length|volumize %}
-      Download MacDown<br>
-      <span class="sub">{{ version }}, {{ size }}</span>
-      {% endblocktrans %}
-      </a>
-    </div>
-    {% endif %}
+    {% include 'base/includes/download_link.html' %}
   </div>
 </div>
 

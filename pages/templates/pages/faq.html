@@ -1,0 +1,37 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="medium-offset-1 medium-10 content columns">
+    <h1>Frequently Asked Questions</h1>
+
+    <h3>OS X Says You Are an Unidentified Developer!</h3>
+
+    <p>When you first download and open MacDown, you might see a window like this:</p>
+
+    <p><img class="squeeze" src="http://d.pr/i/AfIY+" alt="OS X app block warning."></p>
+
+    <p>This is because I do not own a registered OS X developer certificate (which can be obtained if and only if you <a href="https://developer.apple.com/programs/mac/">pay</a> $99 a year to Apple), and OS X does not allow installation of applications without certificates by default. This can be overridden in the “Security &amp; Privacy” pane in System Preferences:</p>
+
+    <p><img class="squeeze" src="http://d.pr/i/LYZc+" alt="OS X Security &amp; Privacy preferences."></p>
+
+    <p>Click “Open Anyway” to authorise MacDown, or select the “Anywhere” radio button to allow all unidentified apps (including MacDown) to open in the future. You may need to click at the lock in the bottom left and enter your password first.</p>
+
+    <h3>Why Didn’t You Use Swift?</h3>
+
+    <p>MacDown was initiated shortly after Apple announced Swift. While Swift is truely a nice language, <a href="http://swiftwtf.tumblr.com">I do not think it is quite production-ready yet</a>. I would very much like to use it in the future, though.</p>
+
+    <h3>Why OS X?</h3>
+
+    <p>I am a cross-platform developer, and chould have implemented the whole thing with a cross-platform framework. But those frameworks usually feel alient, especially on OS X. I might port this if there’s time, though. Still considering options.</p>
+
+    <h3>I Want Feature X. Why Didn’t You Implement It?</h3>
+
+    <p>Well, this is still a very young project, and I only implemented the features I need. Please feel free to offer any advices in the issue section on GitHub, or send me a pull request with your implementation. This is what open source is about, isn’t it? :D</p>
+
+    {% include 'base/includes/download_link.html' %}
+  </div>
+</div>
+
+{% endblock %}
