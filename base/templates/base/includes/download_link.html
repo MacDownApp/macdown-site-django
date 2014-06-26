@@ -2,7 +2,7 @@
 
 {% if latest_version %}
 <div class="link-block">
-  <a href="{{ latest_version.get_absolute_url }}" class="download button">
+  <a href="{{ latest_version.get_absolute_url }}" class="download button" target="_blank">
   {% blocktrans with version=latest_version size=latest_version.length|volumize %}
   Download MacDown<br>
   <span class="sub">{{ version }}, {{ size }}</span>
