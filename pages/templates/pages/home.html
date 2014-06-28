@@ -52,23 +52,15 @@
 
     <h2>What’s in the Box?</h2>
 
-    <p>MacDown is heavily influenced by Mou, and I try to mimic much of its behaviour as much as possible both in UI and the logic underneath, only making changes when I feel that improvement is necessary. Here are some of the more important features MacDown has to offer:</p>
+    <p>MacDown is heavily influenced by Mou, and I try to mimic much of its behaviour as much as possible both in UI and the logic underneath, only making changes when I feel that improvement is necessary. Highlights include:</p>
 
-    <h3>Markdown Rendering</h3>
+    <ul>
+      <li>Highly customisable Markdown rendering.</li>
+      <li>Syntax highlighting in fenced code blocks.</li>
+      <li>Sophisticated auto-completion.</li>
+    </ul>
 
-    <p><a href="https://github.com/hoedown/hoedown">Hoedown</a> is used internally to render Markdown into HTML. This makes MacDown’s live preview both efficient and very configurable. It also supports lots of non-standard syntactic features, including the very widely-used <a href="https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks">fenced code blocks with language identifiers</a>. You can find all the available configurations in the Preferences. Try them out!</p>
-
-    <p><img class="squeeze" src="http://d.pr/i/hsm4+" alt="Markdown syntax preferences."></p>
-
-    <h3>Syntax Highlighting</h3>
-
-    <p>MacDown offers syntax highlighting in fenced code blocks with language identifiers through <a href="http://prismjs.com">Prism</a>.</p>
-
-    <p><img src="http://d.pr/i/9HM6+" alt="Syntax highlighting example."></p>
-
-    <h3>Auto-completion</h3>
-
-    <p>I am spoiled, as a programmer, by some pretty advanced auto-completion various IDEs offer. I implemented MacDown’s auto-completion to suit my own need. Hope it suits you too—or you can turn it off if you wish to.</p>
+    <p>Visit the <a href="{% url 'pages:features' %}">Features</a> page for more details.</p>
 
     {% include 'base/includes/download_link.html' %}
   </div>

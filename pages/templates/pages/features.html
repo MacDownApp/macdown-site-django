@@ -1,0 +1,79 @@
+{% extends 'pages/base.html' %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/features.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+  <div class="medium-offset-1 medium-10 content columns">
+    <h1>Main Features</h1>
+
+    <h3>Markdown Rendering</h3>
+
+    <p><a href="https://github.com/hoedown/hoedown">Hoedown</a> is used internally to render Markdown into HTML. This makes MacDown’s live preview both efficient and very configurable. It also supports lots of non-standard syntactic features, including the very widely-used <a href="https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks">fenced code blocks with language identifiers</a>. You can find all the available configurations in the Preferences. Try them out!</p>
+
+    <p><img class="squeeze" src="http://d.pr/i/hsm4+" alt="Markdown syntax preferences."></p>
+
+    <h3>Syntax Highlighting</h3>
+
+    <p>MacDown offers syntax highlighting in fenced code blocks with language identifiers through <a href="http://prismjs.com">Prism</a>.</p>
+
+    <p><img src="http://d.pr/i/9HM6+" alt="Syntax highlighting example."></p>
+
+    <p>Currently the following language IDs are supported:</p>
+
+    <table>
+      <thead><tr><th>Language ID</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>aspnet</code></td><td>ASP.NET markup in <code>.aspx</code> files.</td></tr>
+        <tr><td><code>bash</code></td><td></td></tr>
+        <tr><td><code>c</code></td><td></td></tr>
+        <tr><td><code>clike</code></td><td>Generic syntax for C-like languages.</td></tr>
+        <tr><td><code>coffeescript</code></td><td></td></tr>
+        <tr><td><code>cpp</code></td><td>C++.</td></tr>
+        <tr><td><code>csharp</code></td><td>C#.</td></tr>
+        <tr><td><code>css</code></td><td></td></tr>
+        <tr><td><code>gherkin</code></td><td></td></tr>
+        <tr><td><code>go</code></td><td></td></tr>
+        <tr><td><code>groovy</code></td><td></td></tr>
+        <tr><td><code>html</code></td><td>Alias to <code>markup</code>.</td></tr>
+        <tr><td><code>http</code></td><td>Syntax used in <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> requests and responses.</td></tr>
+        <tr><td><code>java</code></td><td></td></tr>
+        <tr><td><code>javascript</code></td><td></td></tr>
+        <tr><td><code>markup</code></td><td>Generic *ML syntax, e.g. HTML, XML, etc.</td></tr>
+        <tr><td><code>nsis</code></td><td></td></tr>
+        <tr><td><code>obj-c</code></td><td>Alias to <code>objectivec</code>.</td></tr>
+        <tr><td><code>objc</code></td><td>Alias to <code>objectivec</code>.</td></tr>
+        <tr><td><code>objective-c</code></td><td>Alias to <code>objectivec</code>.</td></tr>
+        <tr><td><code>objectivec</code></td><td>Objective-C.</td></tr>
+        <tr><td><code>php</code></td><td></td></tr>
+        <tr><td><code>python</code></td><td>Python 2.</td></tr>
+        <tr><td><code>rip</code></td><td></td></tr>
+        <tr><td><code>ruby</code></td><td></td></tr>
+        <tr><td><code>scala</code></td><td></td></tr>
+        <tr><td><code>scss</code></td><td></td></tr>
+        <tr><td><code>sql</code></td><td></td></tr>
+        <tr><td><code>swift</code></td><td>Apple’s Swift programming language. <em>Not</em> <a href="http://swift-lang.org/">the parallel scripting language</a>.</td></tr>
+        <tr><td><code>xml</code></td><td>Alias to <code>markup</code>.</td></tr>
+      </tbody>
+    </table>
+
+    <h4 id="syntax_highlighting_contributing">Contributing to the Language List</h4>
+
+    <p>MacDown accepts pull requests on aliases to existing languages, but <strong>not</strong> new syntax highlighting rules. If you wish to provide additional language definitions and/or themes, please visit <a href="https://github.com/LeaVerou/prism/">Prism’s project page</a> and submit them there. I will include updates from Prism after your pull request is accepted.</p>
+
+    <h3>Auto-completion</h3>
+
+    <p>I am spoiled, as a programmer, by some pretty advanced auto-completion various IDEs offer. I implemented MacDown’s auto-completion to suit my own need. Hope it suits you too—or you can turn it off if you wish to.</p>
+
+    {% include 'base/includes/download_link.html' %}
+  </div>
+</div>
+
+{% endblock %}
