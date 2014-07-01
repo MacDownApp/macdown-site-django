@@ -1,6 +1,7 @@
 from django.core.urlresolvers import Http404
 from django.views.generic import RedirectView
-from base.models import MacDownVersion
+from sparkle.models import Version
+from base.models import get_macdown
 
 
 class VersionView(RedirectView):
@@ -9,8 +10,10 @@ class VersionView(RedirectView):
 
     def get_version(self, version_string=None):
         try:
-            return MacDownVersion.objects.get(short_version=version_string)
-        except MacDownVersion.DoesNotExist:
+            return get_macdown().active_versions().get(
+                short_version=version_string,
+            )
+        except Version.DoesNotExist:
             raise Http404
 
     def get_redirect_url(self, *args, **kwargs):
@@ -20,7 +23,7 @@ class VersionView(RedirectView):
 
 class LatestVersionView(VersionView):
     def get_version(self, version_string=None):
-        return MacDownVersion.objects.active().latest()
+        return get_macdown().active_versions().latest()
 
 
 version = VersionView.as_view()

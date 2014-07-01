@@ -1,8 +1,8 @@
-{% load i18n base_tags %}
+{% load i18n base_tags downloads_tags %}
 
 {% if latest_version %}
 <div class="link-block">
-  <a href="{{ latest_version.get_absolute_url }}" class="download button" target="_blank">
+  <a href="{% download_link latest_version %}" class="download button" target="_blank">
   {% blocktrans with version=latest_version size=latest_version.length|volumize %}
   Download MacDown<br>
   <span class="sub">{{ version }}, {{ size }}</span>
