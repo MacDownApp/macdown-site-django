@@ -6,6 +6,10 @@
   <div class="medium-offset-1 medium-10 content columns">
     <h1>Frequently Asked Questions</h1>
 
+    <p>There are some questions I get asked a lot. Here are the answers.</p>
+
+    <h2>Installation and System Requirements</h2>
+
     <h3>OS X Says You Are an Unidentified Developer!</h3>
 
     <p>When you first download and open MacDown, you might see a window like this:</p>
@@ -18,23 +22,47 @@
 
     <p>Click “Open Anyway” to authorise MacDown, or select the “Anywhere” radio button to allow all unidentified apps (including MacDown) to open in the future. You may need to click at the lock in the bottom left and enter your password first.</p>
 
+    <h3>Will You Support Other Platforms?</h3>
+
+    <p>I did have plans to build some kind of ports. Most of MacDown’s core functionalities are based on C libraries (except autocomplete), so it won’t be hard to replicate something similar with other GUI frameworks. I don’t currently have the time, but I’ll be more than happy to share the details if you are interested.</p>
+
+    <h3>How About OS X Versions Earlier Than 10.8?</h3>
+
+    <p>The main problem here is that I don’t have enough resources to promise API compatibility without seriously slowing down development. Unless I build some kind of CI services, backward compatibility is easier said than done.</p>
+
+    <p>One possibility here, however, is to provide support via a cross-platform port (see previous question). As far as I know, most cross-platform GUI frameworks support all the way back to 10.6, so this could be a stone that kills two birds. <em>If</em> someone does that.</p>
+
+    <h2>Features</h2>
+
+    <h3>Will You Support <a href="https://github.github.com/github-flavored-markdown/">GFM</a>?</h3>
+
+    <p>GFM (GitHub Flavoured Markdown) is a mix of standard Markdown, and some non-standard syntaxes that add additional functionalities and/or more ease for a particular group of people to write. MacDown provides lots of switches to let you choose what non-standard syntax(es) you want to use, and you can get almost all features in GFM if you configure them correctly. Check out the <a href="{% url 'pages:features' %}">Features</a> page to find out what extensions MacDown provides.</p>
+
+    <p>As the time of writing, MacDown can be 100% compatible to GFM except <a href="https://help.github.com/articles/github-flavored-markdown#multiple-underscores-in-words">intra-word underscores</a>, which can be worked around by adding backslashes (<code>\</code>) before underscores.</p>
+
+    <h3>Will There Be a VIM Mode?</h3>
+
+    <p>No. VIM edit mode is a topic too big. I leveraged a lot on OS X’s built-in text editing functionalities when implementing the editor, and implementing VIM mode means that I’ll need to tear them all down and start from the ground up. This doesn’t fit well with the direction of the project.</p>
+
+    <p>There are several VIM plugins that can achieve similar things, just search for vim markdown preview in your search engine. Or i would recommend Sublime Text instead if you really want something more GUI. Enabling extensions like <em>Vintage</em>, <em>Markdown Extended</em> (or <em>MarkdownEditing</em> or others, pick what suits you) and <em>Markdown Preview</em> should be enough.</p>
+
     <h3>I Have a Question/Problem/Suggestion. Where Should I Post It?</h3>
 
-    <p>You can report any issues you encountered with MacDown at the project’s <a href="https://github.com/uranusjr/macdown/issues">GitHub issue page</a>. Suggestions are also welcomed. If it is about this <em>site</em>, not MacDown itself, you can report them <a href="https://github.com/uranusjr/macdown-site/issues">here</a> instead.</p>
+    <p>You can report any issues you encountered with MacDown at the project’s <a href="https://github.com/uranusjr/macdown/issues">GitHub issue page</a>. Suggestions are also welcomed. If it is about this <em>site</em>, not MacDown itself, you can report them <a href="https://github.com/uranusjr/macdown-site/issues">here</a> instead. Please feel free to offer any advices, or send me a pull request with your implementation.</p>
 
     <p>There’s one exception to this: MacDown does not accept new code block syntax highlighting rules. Refer to the <a href="{% url 'pages:features' %}#syntax_highlighting_contributing">relevant section</a> for more information.</p>
+
+    <h2>Miscellaneous</h2>
 
     <h3>Why Didn’t You Use Swift?</h3>
 
     <p>MacDown was initiated shortly after Apple announced Swift. While Swift is truely a nice language, <a href="http://swiftwtf.tumblr.com">I do not think it is quite production-ready yet</a>. I would very much like to use it in the future, though.</p>
 
-    <h3>Why OS X?</h3>
+    <h3>Do You Take Donations?</h3>
 
-    <p>I am a cross-platform developer, and chould have implemented the whole thing with a cross-platform framework. But those frameworks usually feel alient, especially on OS X. I might port this if there’s time, though. Still considering options.</p>
+    <p>There’re no plans for MacDown to take donations now or in near future. I made MacDown out of interest, and don’t want to feel financially connected to it. There are many other open source projects and organisations that would be more than happy to receive your support.</p>
 
-    <h3>I Want Feature X. Why Didn’t You Implement It?</h3>
-
-    <p>Well, this is still a very young project, and I only implemented the features I need. Please feel free to offer any advices in the issue section on GitHub, or send me a pull request with your implementation. This is what open source is about, isn’t it? :D</p>
+    <p>If you insist on buying me a drink <em>personally</em>, however, feel free to <a href="https://twitter.com/uranusjr">send me a tweet</a> when you visit <a href="http://en.wikipedia.org/wiki/Taipei">Taipei, Taiwan</a>, where I live.</p>
 
     {% include 'base/includes/download_link.html' %}
   </div>
