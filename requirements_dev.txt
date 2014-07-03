@@ -1,0 +1,3 @@
+lxml
+cssselect
+django-nose
