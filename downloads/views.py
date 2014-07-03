@@ -10,7 +10,7 @@ class VersionView(RedirectView):
 
     def get_version(self, **kwargs):
         try:
-            return macdown.active_versions().get(**kwargs)
+            return macdown.versions.get(**kwargs)
         except Version.DoesNotExist:
             raise Http404
 
