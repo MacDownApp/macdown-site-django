@@ -1,5 +1,5 @@
+from django.utils.functional import SimpleLazyObject
 from sparkle.models import Application
 
 
-def get_macdown():
-    return Application.objects.get(slug='macdown')
+macdown = SimpleLazyObject(lambda: Application.objects.get(slug='macdown'))

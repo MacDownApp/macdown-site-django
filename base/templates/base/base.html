@@ -1,6 +1,6 @@
 {% extends 'base/boilerplate.html' %}
 
-{% load i18n staticfiles base_tags downloads_tags %}
+{% load i18n staticfiles base_tags %}
 
 {% block title %}{% blocktrans %}MacDown: The open source Markdown editor for OS X.{% endblocktrans %}{% endblock %}
 
@@ -27,7 +27,11 @@
   <section class="top-bar-section">
     <ul class="right">
       {% if latest_version %}
-      <li class="active show-for-medium-up"><a href="{% download_link latest_version %}" target="_blank">{% trans 'Download MacDown' %}</a></li>
+      <li class="active show-for-medium-up">
+        <a href="{{ latest_version.get_absolute_url }}" target="_blank">
+          {% trans 'Download MacDown' %}
+        </a>
+      </li>
       {% endif %}
       <li><a href="https://uranusjr.com">{% trans 'Visit Author Site' %} <span class="fi-arrow-right"></span></a></li>
     </ul>
