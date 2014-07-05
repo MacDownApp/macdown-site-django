@@ -1,7 +1,9 @@
+import re
 import lxml.html
 from lxml.cssselect import CSSSelector
-from django.test import TestCase, Client
+from django.test import TestCase
 from nose.tools import assert_equal, assert_not_equal
+from sparkle.models import Version
 from base.models import macdown
 
 
@@ -51,3 +53,31 @@ class PageTests(TestCase):
         assert_equal(response.status_code, 200)
         tree = lxml.html.fromstring(response.content)
         self._check_download_buttons(tree, latest_version)
+
+
+class NoDownloadLinkTests(TestCase):
+    """Test the download link if versions does not exist.
+    """
+    fixtures = ('sparkle.json',)
+
+    def _test_home(self):
+        # Should load.
+        response = self.client.get('/')
+        assert_equal(response.status_code, 200)
+        tree = lxml.html.fromstring(response.content)
+
+        # Should not contain download link in navbar.
+        assert_equal(len(CSSSelector('.top-bar li.active a')(tree)), 0)
+
+        # Should not contain download link.
+        assert_equal(len(CSSSelector('.download.button')(tree)), 0)
+
+    def test_no_default(self):
+        # Remove versions from default channel.
+        macdown.active_versions().delete()
+        self._test_home()
+
+    def test_nothing_at_all(self):
+        # Remove all versions.
+        Version.objects.all().delete()
+        self._test_home()
