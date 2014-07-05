@@ -10,5 +10,9 @@ install:
     - pip install -q -r requirements.txt
     - pip install -q -r requirements-dev.txt
 
+before_script:
+    - python manage.py migrate --noinput
+    - python manage.py loaddata base/fixtures/macdown.json
+
 script:
     - python manage.py test

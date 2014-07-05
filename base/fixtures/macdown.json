@@ -1,0 +1,27 @@
+[
+{
+    "fields": {
+        "slug": "stable",
+        "name": "Stable"
+    },
+    "model": "sparkle.channel",
+    "pk": 1
+},
+{
+    "fields": {
+        "slug": "testing",
+        "name": "Testing"
+    },
+    "model": "sparkle.channel",
+    "pk": 2
+},
+{
+    "fields": {
+        "slug": "macdown",
+        "name": "MacDown",
+        "default_channel": 1
+    },
+    "model": "sparkle.application",
+    "pk": 1
+}
+]

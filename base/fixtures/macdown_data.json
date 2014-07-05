@@ -1,31 +1,6 @@
 [
 {
     "fields": {
-        "slug": "macdown",
-        "name": "MacDown",
-        "default_channel": 1
-    },
-    "model": "sparkle.application",
-    "pk": 1
-},
-{
-    "fields": {
-        "slug": "stable",
-        "name": "Stable"
-    },
-    "model": "sparkle.channel",
-    "pk": 1
-},
-{
-    "fields": {
-        "slug": "testing",
-        "name": "Testing"
-    },
-    "model": "sparkle.channel",
-    "pk": 2
-},
-{
-    "fields": {
         "update_url": "https://github.com/uranusjr/macdown/releases/download/v0.1/MacDown.app.zip",
         "short_version": "0.1",
         "created_at": "2014-06-22T08:38:45.970Z",

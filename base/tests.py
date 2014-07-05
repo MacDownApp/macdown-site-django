@@ -7,7 +7,7 @@ from .models import macdown
 class BaseTests(TestCase):
     """Tests for base module.
     """
-    fixtures = ('sparkle.json',)
+    fixtures = ('macdown', 'macdown_data')
 
     def test_macdown(self):
         assert_equal(macdown, Application.objects.get(slug='macdown'))

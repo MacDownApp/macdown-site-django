@@ -6,7 +6,7 @@ from sparkle.models import Version
 class DownloadTests(TestCase):
     """Tests for download link generation.
     """
-    fixtures = ('sparkle.json',)
+    fixtures = ('macdown', 'macdown_data')
 
     def test_version_absolute_url(self):
         # Version with readable tag.

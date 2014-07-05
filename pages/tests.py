@@ -1,4 +1,3 @@
-import re
 import lxml.html
 from lxml.cssselect import CSSSelector
 from django.test import TestCase
@@ -10,7 +9,7 @@ from base.models import macdown
 class PageTests(TestCase):
     """Tests for page loading.
     """
-    fixtures = ('sparkle.json',)
+    fixtures = ('macdown', 'macdown_data')
 
     def _check_download_buttons(self, tree, version):
         """Check that download links in the tree are correct.
@@ -58,7 +57,7 @@ class PageTests(TestCase):
 class NoDownloadLinkTests(TestCase):
     """Test the download link if versions does not exist.
     """
-    fixtures = ('sparkle.json',)
+    fixtures = ('macdown', 'macdown_data')
 
     def _test_home(self):
         # Should load.
