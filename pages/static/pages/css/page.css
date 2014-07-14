@@ -1,6 +1,12 @@
-.content {
+.content.columns {
     margin-top: 2em;
     text-align: justify;
+}
+.accordion {
+    margin-bottom: 2.5em;
+}
+.accordion .accordion-navigation a:first-child {
+    font-size: 120%;
 }
 img {
     display: block;
