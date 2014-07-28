@@ -10,3 +10,5 @@ ALLOWED_HOSTS = ['macdown.uranusjr.com', 'macdown.herokuapp.com']
 STATIC_ROOT = 'static'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_REQUIRED_PATH_PATTERN = r'/admin/'
