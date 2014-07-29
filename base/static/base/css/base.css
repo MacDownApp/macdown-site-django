@@ -2,10 +2,13 @@
     margin-left: 1.5em;
 }
 .top-bar .left li a {
+    font-size: 90%;
     text-align: center;
+}
+.top-bar .left > li > a {
     font-size: 110%;
 }
-.top-bar .left li:first-child a {
+.top-bar .left > li:first-child a {
     font-weight: bold;
     padding-left: 0.5em;
     margin: auto 0.5em;

@@ -69,6 +69,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'base.context_processors.latest_version',
+    'base.context_processors.channels',
 )
 
 ROOT_URLCONF = '__.urls'

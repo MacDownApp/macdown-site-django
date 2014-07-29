@@ -39,6 +39,14 @@
       <li><a href="{% url 'pages:home' %}">{% trans 'Home' %}</a></li>
       <li><a href="{% url 'pages:features' %}">{% trans 'Features' %}</a></li>
       <li><a href="{% url 'pages:faq' %}">{% trans 'FAQ' %}</a></li>
+      <li class="has-dropdown">
+        <a href="{% url 'history:all' %}">{% trans 'History' %}</a>
+        <ul class="dropdown">
+          {% for channel in channels %}
+          <li><a href="{{ channel.get_absolute_url }}">{{ channel.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
     </ul>
   </section>
 </nav>
