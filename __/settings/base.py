@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'base',
     'downloads',
+    'history',
     'pages',
     'absolute',
     'ghostdown',

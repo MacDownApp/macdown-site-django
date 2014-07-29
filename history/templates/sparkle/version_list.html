@@ -1,0 +1,42 @@
+{% extends 'pages/base.html' %}
+
+{% load i18n staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'history/css/history.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+  <div class="medium-offset-1 medium-10 content columns">
+
+    <h1>{% trans 'Version History' %}</h1>
+    <hr>
+
+    {% for version in version_list %}
+    <div class="row">
+      <div class="medium-12 columns">
+        <h2>
+          {{ version.title }}
+          <span class="info attribute">
+            {{ version.publish_at|date:'Y-m-d' }}
+            ({{ version.version }})
+          </span>
+          <a href="{{ version.get_absolute_url }}" class="download attribute">{% trans 'Download' %}</a>
+          {% for channel in version.channels.all %}
+          <a href="{{ channel.get_absolute_url }}" class="channel attribute">{{ channel.name }}</a>
+          {% endfor %}
+        </h2>
+        <p>{{ version.short_description }}</p>
+        <div>{{ version.release_notes }}</div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock content %}

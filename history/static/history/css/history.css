@@ -1,0 +1,16 @@
+h2 .attribute {
+    font-size: 40%;
+}
+h2 .info.attribute {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+h2 .channel.attribute {
+    font-size: 35%;
+}
+h2 .download.attribute {
+    font-weight: bold;
+}
+h2 .download.attribute:hover {
+    text-decoration: underline;
+}
