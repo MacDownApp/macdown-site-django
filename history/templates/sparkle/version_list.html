@@ -27,7 +27,8 @@
     {% for version in version_list %}
     <div class="row">
       <div class="medium-12 columns">
-        <h2 id="version_{{ version.slug }}">
+        <h2 id="version_{{ version.version }}">
+          <a href="#version_{{ version.version }}" class="anchor-mark">¶</a>
           {{ version.title }}
           <span class="info attribute">
             {{ version.publish_at|date:'Y-m-d' }}
