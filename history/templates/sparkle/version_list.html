@@ -13,7 +13,15 @@
 <div class="row">
   <div class="medium-offset-1 medium-10 content columns">
 
-    <h1>{% trans 'Version History' %}</h1>
+    <h1>
+      {% if channel %}
+      {% blocktrans with channel_name=channel.name %}
+      Version History ({{ channel_name }} Channel)
+      {% endblocktrans %}
+      {% else %}
+      {% trans 'Version History' %}
+      {% endif %}
+    </h1>
     <hr>
 
     {% for version in version_list %}

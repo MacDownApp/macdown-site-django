@@ -11,12 +11,18 @@ class AllHistoryView(ListView):
 
 
 class ChannelHistoryView(ListView):
+
     def get_queryset(self):
         try:
-            channel = Channel.objects.get(slug=self.kwargs.get('slug'))
+            self.channel = Channel.objects.get(slug=self.kwargs.get('slug'))
         except Channel.DoesNotExist:
             raise Http404
-        return macdown.active_versions(channel=channel)
+        return macdown.active_versions(channel=self.channel)
+
+    def get_context_data(self):
+        data = super().get_context_data()
+        data.update({'channel': self.channel})
+        return data
 
 
 all_ = AllHistoryView.as_view()
