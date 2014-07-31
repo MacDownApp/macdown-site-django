@@ -16,10 +16,8 @@
     <h1>{{ post.title }}</h1>
     <hr>
     <div class="post-meta">
-      {% blocktrans with author=post.author published_at=post.published_at %}
-      by <span>{{ author }}</span>
-      at <span>{{ published_at }}</span>
-      {% endblocktrans %}
+      {% if post.author %}{% blocktrans with author=post.author %}by <span>{{ author }}</span>{% endblocktrans %}{% endif %}
+      {% if post.published_at %}{% blocktrans with published_at=post.published_at %}at <span>{{ published_at }}</span>{% endblocktrans %}{% endif %}
     </div>
 
     {{ post.content|safe }}
