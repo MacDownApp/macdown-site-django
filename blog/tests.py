@@ -2,7 +2,7 @@ import os
 import tempfile
 from django.test import TestCase
 from nose.tools import assert_equal
-from . import utils
+from . import posts
 
 
 EXAMPLE_POST_CONTENT = (
@@ -22,11 +22,11 @@ class PostDirTests(TestCase):
         self.post_dir = os.path.join(os.path.dirname(__file__), 'posts')
 
     def test_post_dir(self):
-        assert_equal(utils.default_post_dir, self.post_dir)
+        assert_equal(posts.default_post_dir, self.post_dir)
 
     def test_get_post_abspath(self):
         post_path = os.path.join(self.post_dir, 'foo')
-        assert_equal(utils.get_post_abspath('foo'), post_path)
+        assert_equal(posts.get_post_abspath('foo'), post_path)
 
 
 class PostTests(TestCase):
@@ -38,7 +38,7 @@ class PostTests(TestCase):
         f.write(EXAMPLE_POST_CONTENT)
         f.close()
         dirpath, filename = os.path.split(path)
-        self.post = utils.Post(filename, dirpath)
+        self.post = posts.Post(filename, dirpath)
         self.filename = filename
 
     def tearDown(self):

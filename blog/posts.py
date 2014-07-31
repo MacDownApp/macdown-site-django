@@ -3,6 +3,7 @@ import re
 import yaml
 from django.utils.functional import cached_property
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.apps import apps
 from django.template import TemplateDoesNotExist
 
@@ -48,6 +49,9 @@ class Post:
         front_matter, offset = get_front_matter(full_content)
         return (front_matter, full_content[offset:])
 
+    def get_absolute_url(self):
+        return reverse('blog:post', kwargs={'id': self.id, 'slug': self.slug})
+
     def read(self):
         return load_post_source(self.filename, self.dirpath)
 
@@ -58,6 +62,24 @@ def calculate_post_dir():
 
 
 default_post_dir = calculate_post_dir()
+
+
+def get_post_filelist(post_dir=None):
+    if post_dir is None:
+        post_dir = default_post_dir
+    return os.listdir(post_dir)
+
+
+def get_post_filename(id, post_dir=None):
+    prefix = '{id}-'.format(id=id)
+    for filename in get_post_filelist(post_dir):
+        if filename.startswith(prefix):
+            return filename
+    if post_dir is None:
+        post_dir = default_post_dir
+    raise PostDoesNotExist(
+        'ID {id} in directory {dir}'.format(id=id, dir=post_dir)
+    )
 
 
 def get_post_abspath(filename, post_dir=None):
