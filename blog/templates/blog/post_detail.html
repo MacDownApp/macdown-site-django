@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="medium-offset-1 medium-10 content columns">
+    <h1>{{ post.title }}</h1>
+    {{ post.content|safe }}
+  </div>
+</div>
+
+{% endblock content %}
