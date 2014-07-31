@@ -2,6 +2,7 @@ import mistune
 from django.http.response import HttpResponsePermanentRedirect
 from django.views.generic import TemplateView
 from .posts import Post, get_post_filename
+from .utils import Renderer, resolve_prism_languages
 
 
 class PostDetailView(TemplateView):
@@ -19,9 +20,16 @@ class PostDetailView(TemplateView):
 
     def get_context_data(self, **kwargs):
         post_data, content = self.post.file_content
-        post_data['content'] = mistune.markdown(content)
+        if post_data is None:
+            post_data = {}
+
+        renderer = Renderer()
+        post_data['content'] = mistune.markdown(content, renderer=renderer)
         data = super().get_context_data()
-        data['post'] = post_data
+        data.update({
+            'post': post_data,
+            'languages': resolve_prism_languages(renderer.languages),
+        })
         return data
 
 

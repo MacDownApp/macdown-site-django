@@ -34,3 +34,14 @@ footer .links > span:after {
 footer .links > span:last-child:after {
     content: none;
 }
+
+/* Override Foundation's code block styling to match Prism's */
+pre {
+    background: #f5f2f0;
+    padding: 1em;
+    padding-left: 2em;
+}
+pre code {
+    font-weight: normal;
+    color: #000;
+}

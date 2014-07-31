@@ -1,5 +1,12 @@
 {% extends 'pages/base.html' %}
 
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static '3rdparty/prism/themes/prism.css' %}">
+{% endblock extra_css %}
+
 {% block content %}
 
 <div class="row">
@@ -10,3 +17,13 @@
 </div>
 
 {% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="{% static '3rdparty/prism/components/prism-core.min.js' %}"></script>
+{% for lang in languages reversed %}
+<script type="text/javascript" src="{% static '3rdparty/prism/components/prism-'|add:lang|add:'.min.js' %}"></script>
+{% endfor %}
+{% endblock extra_js %}
