@@ -9,8 +9,10 @@ django-grappelli==2.5.3
 django-toolbelt==0.0.1
 gunicorn==19.0.0
 Markdown==2.4.1
+mistune==0.3.0
 psycopg2==2.5.3
 pystache==0.5.4
+PyYAML==3.11
 six==1.7.2
 static==1.0.2
 static3==0.5.1

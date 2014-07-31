@@ -1,0 +1,26 @@
+{% extends 'pages/base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<div class="row">
+  <div class="medium-offset-1 medium-10 content columns">
+
+    <h1>{% trans 'The MacDown Blog' %}</h1>
+    <hr>
+
+    <ul class="post-list">
+      {% for post in posts %}
+      <li>
+        <span class="date">{{ post.published_at|date:'Y-m-d' }}</span>
+        <span class="sep">»</span>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</div>
+
+{% endblock content %}

@@ -10,5 +10,4 @@ def version_get_absolute_url(obj):
     else:
         return reverse('downloads:version', kwargs={'version': obj.version})
 
-
 Version.get_absolute_url = version_get_absolute_url
