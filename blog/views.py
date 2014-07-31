@@ -1,7 +1,7 @@
 import mistune
-from django.http.response import HttpResponsePermanentRedirect
+from django.http import Http404, HttpResponsePermanentRedirect
 from django.views.generic import TemplateView
-from .posts import Post, get_post_filename
+from .posts import Post, PostDoesNotExist, get_post_filename
 from .utils import Renderer, resolve_prism_languages
 
 
@@ -11,7 +11,10 @@ class PostDetailView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         post_slug = kwargs.get('slug')
-        post = Post(get_post_filename(id=kwargs['id']))
+        try:
+            post = Post(get_post_filename(id=kwargs['id']))
+        except PostDoesNotExist:
+            raise Http404
         if post.slug != post_slug:
             canonical_url = post.get_absolute_url()
             return HttpResponsePermanentRedirect(redirect_to=canonical_url)
@@ -19,9 +22,11 @@ class PostDetailView(TemplateView):
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        post_data, content = self.post.file_content
-        if post_data is None:
-            post_data = {}
+        try:
+            post_data, content = self.post.file_content
+            assert post_data is not None
+        except (AssertionError, PostDoesNotExist):
+            raise Http404
 
         renderer = Renderer()
         post_data['content'] = mistune.markdown(content, renderer=renderer)
