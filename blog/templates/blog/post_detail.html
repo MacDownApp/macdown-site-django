@@ -1,18 +1,29 @@
 {% extends 'pages/base.html' %}
 
-{% load staticfiles %}
+{% load i18n staticfiles %}
 
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static '3rdparty/prism/themes/prism.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/post_detail.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
 
 <div class="row">
   <div class="medium-offset-1 medium-10 content columns">
+
     <h1>{{ post.title }}</h1>
+    <hr>
+    <div class="post-meta">
+      {% blocktrans with author=post.author published_at=post.published_at %}
+      by <span>{{ author }}</span>
+      at <span>{{ published_at }}</span>
+      {% endblocktrans %}
+    </div>
+
     {{ post.content|safe }}
+
   </div>
 </div>
 
