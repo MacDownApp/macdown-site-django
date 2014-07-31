@@ -11,7 +11,7 @@ class PostListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         posts = []
-        for filename in get_post_filelist():
+        for filename in reversed(get_post_filelist()):
             try:
                 post = Post(filename)
             except PostDoesNotExist:
