@@ -32,6 +32,7 @@ class Post:
         if dirpath is None:
             dirpath = default_post_dir
         self.dirpath = dirpath
+        self.filename = ''.join([filename, ext])
 
     def __getattr__(self, key):
         try:
@@ -39,10 +40,6 @@ class Post:
         except KeyError:
             raise AttributeError(key)
         return value
-
-    @property
-    def filename(self):
-        return '{id}-{slug}.md'.format(id=self.id, slug=self.slug)
 
     @property
     def abspath(self):
@@ -78,9 +75,9 @@ def get_post_filelist(post_dir=None):
 
 
 def get_post_filename(id, post_dir=None):
-    prefix = '{id}-'.format(id=id)
+    prefix_pattern = re.compile(r'^0*{id}-'.format(id=id))
     for filename in get_post_filelist(post_dir):
-        if filename.startswith(prefix):
+        if prefix_pattern.match(filename):
             return filename
     if post_dir is None:
         post_dir = default_post_dir
