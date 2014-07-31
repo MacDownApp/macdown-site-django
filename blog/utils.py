@@ -67,7 +67,6 @@ def resolve_prism_languages(language_set):
         except ValueError:  # Not found.
             pass
         languages.append(lang)
-        print(languages)
 
     for lang in language_set:
         put_lang(lang)

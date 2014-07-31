@@ -1,8 +1,26 @@
 import mistune
 from django.http import Http404, HttpResponsePermanentRedirect
 from django.views.generic import TemplateView
-from .posts import Post, PostDoesNotExist, get_post_filename
+from .posts import Post, PostDoesNotExist, get_post_filelist, get_post_filename
 from .utils import Renderer, resolve_prism_languages
+
+
+class PostListView(TemplateView):
+
+    template_name = 'blog/post_list.html'
+
+    def get_context_data(self, **kwargs):
+        posts = []
+        for filename in get_post_filelist():
+            try:
+                post = Post(filename)
+            except PostDoesNotExist:
+                continue
+            if post.title:
+                posts.append(post)
+        data = super().get_context_data()
+        data.update({'posts': posts})
+        return data
 
 
 class PostDetailView(TemplateView):
@@ -38,4 +56,5 @@ class PostDetailView(TemplateView):
         return data
 
 
-post = PostDetailView.as_view()
+post_list = PostListView.as_view()
+post_detail = PostDetailView.as_view()

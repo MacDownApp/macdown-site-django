@@ -33,6 +33,13 @@ class Post:
             dirpath = default_post_dir
         self.dirpath = dirpath
 
+    def __getattr__(self, key):
+        try:
+            value = self.file_content[0][key]
+        except KeyError:
+            raise AttributeError(key)
+        return value
+
     @property
     def filename(self):
         return '{id}-{slug}.md'.format(id=self.id, slug=self.slug)
