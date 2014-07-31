@@ -1,3 +1,16 @@
+html {
+    min-height: 100%;
+}
+body {
+    height: 100%;
+}
+.content-wrapper {
+    min-height: 100%;
+    margin-top: -45px;
+    padding-top: 45px;
+    padding-bottom: 110px;
+}
+
 .top-bar .left {
     margin-left: 1.5em;
 }
@@ -16,10 +29,11 @@
 footer {
     background: #333;
     color: #fff;
-    margin-top: 50px;
+    margin-top: -80px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 80%;
+    height: 80px;
 }
 footer > div {
     text-align: center;
