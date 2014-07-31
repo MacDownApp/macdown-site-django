@@ -13,14 +13,14 @@
 <div class="row">
   <div class="medium-offset-1 medium-10 content columns">
 
-    <h1>{{ post.title }}</h1>
+    <h1>{{ page.title }}</h1>
     <hr>
     <div class="post-meta">
-      {% if post.author %}{% blocktrans with author=post.author %}by <span>{{ author }}</span>{% endblocktrans %}{% endif %}
-      {% if post.published_at %}{% blocktrans with published_at=post.published_at %}at <span>{{ published_at }}</span>{% endblocktrans %}{% endif %}
+      {% if page.author %}{% blocktrans with author=page.author %}by <span>{{ author }}</span>{% endblocktrans %}{% endif %}
+      {% if page.published_at %}{% blocktrans with published_at=page.published_at %}at <span>{{ published_at }}</span>{% endblocktrans %}{% endif %}
     </div>
 
-    {{ post.content|safe }}
+    {{ content|safe }}
 
   </div>
 </div>

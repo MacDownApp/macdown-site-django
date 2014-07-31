@@ -41,16 +41,16 @@ class PostDetailView(TemplateView):
 
     def get_context_data(self, **kwargs):
         try:
-            post_data, content = self.post.file_content
-            assert post_data is not None
+            page_meta, content = self.post.file_content
+            assert page_meta is not None
         except (AssertionError, PostDoesNotExist):
             raise Http404
 
         renderer = Renderer()
-        post_data['content'] = mistune.markdown(content, renderer=renderer)
         data = super().get_context_data()
         data.update({
-            'post': post_data,
+            'page': page_meta,
+            'content': mistune.markdown(content, renderer=renderer),
             'languages': resolve_prism_languages(renderer.languages),
         })
         return data
