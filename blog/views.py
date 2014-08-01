@@ -65,6 +65,7 @@ class PostDetailView(TemplateView):
         renderer = Renderer()
         data = super().get_context_data()
         data.update({
+            'post': self.post,
             'page': page_meta,
             'content': mistune.markdown(content, renderer=renderer),
             'languages': resolve_prism_languages(renderer.languages),
