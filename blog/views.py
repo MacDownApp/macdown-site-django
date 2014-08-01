@@ -49,7 +49,7 @@ class PostDetailView(TemplateView):
             except PostDoesNotExist:
                 raise Http404
             _post_cache[post_id] = post
-        if post.slug != post_slug:
+        if post.slug != post_slug or kwargs['id'] != str(post_id):
             canonical_url = post.get_absolute_url()
             return HttpResponsePermanentRedirect(redirect_to=canonical_url)
         self.post = post
