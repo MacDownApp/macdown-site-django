@@ -9,7 +9,7 @@ header {
 .logo-block {
     width: 300px;
 }
-.title {
+.title-block .title {
     font-weight: bold;
     font-size: 300%;
     padding-top: 90px;
@@ -26,7 +26,7 @@ header {
     .title-block {
         text-align: center;
     }
-    .title {
+    .title-block .title {
         padding: 0;
     }
 }
