@@ -1,13 +1,25 @@
-{% extends 'pages/base.html' %}
+{% extends 'blog/base.html' %}
 
-{% load i18n %}
+{% load i18n staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/post_list.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
 
 <div class="row">
   <div class="medium-offset-1 medium-10 content columns">
 
-    <h1>{% trans 'The MacDown Blog' %}</h1>
+    <h1>
+      {% trans 'The MacDown Blog' %}
+      <a href="#" class="fi-rss" data-dropdown="feed-dropdown"></a>
+      <ul id="feed-dropdown" class="f-dropdown" data-dropdown-content>
+        <li><a href="{% url 'blog:atom1' %}">{% trans 'Atom 1.0' %}</a></li>
+        <li><a href="{% url 'blog:rss201rev2' %}">{% trans 'RSS 2.0.1 revision 2' %}</a></li>
+      </ul>
+    </h1>
     <hr>
 
     <ul class="post-list">
