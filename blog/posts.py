@@ -1,11 +1,13 @@
 import os
 import re
+import mistune
 import yaml
 from django.utils.functional import cached_property
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.apps import apps
 from django.template import TemplateDoesNotExist
+from .utils import Renderer
 
 
 FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
@@ -28,7 +30,7 @@ class Post:
             )
         self.id = int(match.group(1))
         self.slug = match.group(2)
-
+        self.renderer = None
         if dirpath is None:
             dirpath = default_post_dir
         self.dirpath = dirpath
@@ -36,7 +38,7 @@ class Post:
 
     def __getattr__(self, key):
         try:
-            value = self.file_content[0][key]
+            value = self.meta[key]
         except KeyError:
             raise AttributeError(key)
         return value
@@ -52,6 +54,18 @@ class Post:
         full_content = self.read()
         front_matter, offset = get_front_matter(full_content)
         return (front_matter, full_content[offset:])
+
+    @cached_property
+    def meta(self):
+        return self.file_content[0]
+
+    @cached_property
+    def rendered_content(self):
+        content = self.file_content[1]
+        renderer = Renderer()
+        rendered = mistune.markdown(content, renderer=renderer)
+        self.renderer = renderer
+        return rendered
 
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={'id': self.id, 'slug': self.slug})
@@ -72,6 +86,37 @@ def get_post_filelist(post_dir=None):
     if post_dir is None:
         post_dir = default_post_dir
     return os.listdir(post_dir)
+
+
+# id => post instance
+_post_cache = {}
+
+
+def get_post_list(post_dir=None):
+    posts = []
+    for filename in reversed(get_post_filelist(post_dir)):
+        try:
+            base, _ = os.path.splitext(filename)
+            post_id = int(Post.FILENAME_PATTERN.match(base).group(1))
+            post = _post_cache[post_id]
+        except (AttributeError, KeyError):
+            try:
+                post = Post(filename)
+            except PostDoesNotExist:
+                continue
+            _post_cache[post.id] = post
+        if post.title:
+            posts.append(post)
+    return posts
+
+
+def get_post(post_id, post_dir=None):
+    try:
+        post = _post_cache[post_id]
+    except KeyError:
+        post = Post(get_post_filename(id=post_id, post_dir=post_dir))
+        _post_cache[post_id] = post
+    return post
 
 
 def get_post_filename(id, post_dir=None):
