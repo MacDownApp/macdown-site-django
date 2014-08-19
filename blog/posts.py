@@ -85,7 +85,9 @@ default_post_dir = calculate_post_dir()
 def get_post_filelist(post_dir=None):
     if post_dir is None:
         post_dir = default_post_dir
-    return os.listdir(post_dir)
+    filelist = os.listdir(post_dir)
+    filelist.sort()
+    return filelist
 
 
 # id => post instance
