@@ -10,7 +10,7 @@ MacDown 0.2.3 is the third bug-fixing release for 0.2, plus a few extra goodies.
 
 From pretty much the beginning of the first MacDown release, there have been suggestions for adding a “Export to PDF” menu item to go along with the existing “Export to HTML” one. [Those](https://github.com/uranusjr/macdown/issues/24) were [rejected](https://github.com/uranusjr/macdown/issues/31), mainly because *OS X has PDF generation built-in*. If you navigate to **File → Print…**, you will find a “PDF” button at the bottom left corner, and clicking it reveals a few options…
 
-![PDF options in OS X Print dialog.](/Users/uranusjr/Desktop/os-x-print-pdf.png)
+![PDF options in OS X Print dialog.](http://d.pr/i/6cJp+)
 
 …including **Save as PDF**. This can be used to export PDF, so there really is no need for individual OS X applications (as long as they use the system printing dialog) to implement a seperate export option, unless they provide additional export options, such as those provided by Pages, Keynote, etc..
 
@@ -22,7 +22,7 @@ But I was a little surprised when I get asked again. And again. And there’s a 
 
 Aside from the “one click is better than three” argument (which makes much sense), the most surprising part of people requesting this feature is that most people don’t seem to know that such feature exists in OS X. Which is the main reason that MacDown will from now on include the new Export menu:
 
-![New Export menu in MacDown 0.2.3.](/Users/uranusjr/Desktop/macdown-export-menu.png)
+![New Export menu in MacDown 0.2.3.](http://d.pr/i/R8OX+)
 
 The PDF export works similarly as its HTML counterpart, but will always match styles in the preview, without the CSS and syntax highlighting options. Speaking of which…
 
