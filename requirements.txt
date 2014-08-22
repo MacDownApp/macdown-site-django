@@ -1,4 +1,4 @@
-https://www.djangoproject.com/download/1.7c2/tarball/
+https://www.djangoproject.com/download/1.7c3/tarball/
 git+https://github.com/kennethreitz/dj-static.git
 git+https://github.com/uranusjr/django-sparkle-external.git
 dj-database-url==0.3.0
