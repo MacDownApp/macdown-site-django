@@ -10,7 +10,7 @@ Anyway. There seems to be some confusion about the origin of MacDown, and its re
 
 I was a long-time Mou user (since late 2011, I think) before starting MacDown. It was fine for the most part, being standard-compliant, steady, good-looking, and simple. But that was also the time when I started using GitHub. The more I write on GitHub, the more unsatisfied I became.
 
-Last year (2013) I built my personal website/blog. I included a Markdown-based publishing system inspired by [Logdown](http://logdown.com) and [Ghost](https://ghost.org), and started writing even more Markdown documents. I demoed some problems I had in a blog post (in Chinese) when I launched MacDown:
+Last year (2013) I built my personal website/blog. I included a Markdown-based publishing system inspired by [Logdown](http://logdown.com) and [Ghost](https://ghost.org), and started writing even more Markdown documents. I [illustrated](https://uranusjr.com/blog/post/58/introducing-macdown/) some problems I had in a blog post (in Chinese) when I launched MacDown:
 
 ![Code block rendering in Mou](http://d.pr/i/oh5B+)
 
