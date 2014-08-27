@@ -49,7 +49,16 @@
         <div id="gfm" class="content">
           <p><a href="https://github.github.com/github-flavored-markdown/">GFM</a> (GitHub Flavoured Markdown) is a mix of standard Markdown, and some non-standard syntaxes that add additional functionalities and/or more ease for a particular group of people to write. MacDown provides lots of switches to let you choose what non-standard syntax(es) you want to use, and you can get almost all features in GFM if you configure them correctly. Check out the <a href="{% url 'pages:features' %}">Features</a> page to find out what extensions MacDown provides.</p>
 
-          <p>As the time of writing, MacDown can be 100% compatible to GFM except <a href="https://help.github.com/articles/github-flavored-markdown#multiple-underscores-in-words">intra-word underscores</a>, which can be worked around by adding backslashes (<code>\</code>) before underscores.</p>
+          <p>MacDown can be compatible to GFM, except for some minor structural differences in the resulting HTML, by enabling (only) the follwing options in the “Markdown” preference pane:</p>
+
+          <ul>
+            <li>Tables.</li>
+            <li>Fenced code blocks.</li>
+            <li>Strikethrough.</li>
+            <li>Autolink.</li>
+          </ul>
+
+          <p>And “Task list syntax” in the <strong>Rendering</strong> preference pane.</p>
         </div>
       </dd>
       <dd class="accordion-navigation">
