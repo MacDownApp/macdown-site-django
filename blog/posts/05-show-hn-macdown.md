@@ -39,12 +39,12 @@ You might notice that
 
 Looking back, maybe I should’ve been more explicit. But I didn’t think that much at the time, and just went on publishing the initial version of MacDown.
 
-Things went well until Luo found out (if that’s the right expression) about MacDown. Obviously he felt offended, accusing me being a [copycat](https://twitter.com/chenluois/status/484813471842705408). Now, nobody would be happy being called a copycat, but I did copy his idea. He is right. So I took this advice
+Things went well until Luo found out (if that’s the right expression) about MacDown. Obviously he felt offended, accusing me being a [copycat](https://twitter.com/chenluois/status/484813471842705408). Now, nobody would be happy being called a copycat, but I did copy his idea. He is right. So I took this advice (which is *not* tweeted by Chen Luo, the author of Mou, I should note):
 
 <blockquote class="twitter-tweet"><p>那些 “Inspired by XXX”，克隆，并开放源代码的人都应该吃屎。他们应该将 Description 换成 “Stole the idea from XXX, and let everyone make crappy clones.”</p>&mdash; Sean Cheng (@remaerd) <a href="https://twitter.com/remaerd/statuses/484914820408279040">July 4, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-> Literal translation: Those who made clone and open-source softwares “inspired by XXX” should all go eat shit. They should change their descriptions to “Stole the idea from XXX, and let everyone make crappy clones.”
+> Literal translation: Those who clone and open-source softwares “inspired by XXX” should all go eat shit. They should change their descriptions to “Stole the idea from XXX, and let everyone make crappy clones.”
 
 and changed the [project description](https://github.com/uranusjr/macdown/blob/master/README.md) accordingly.
 
