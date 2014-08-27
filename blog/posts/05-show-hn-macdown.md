@@ -29,7 +29,7 @@ Back to the storyline. I looked for alternatives to Mou, but there are none (no 
 I spent two weekends putting together MacDown. Most things went smoothly enough, but I still lack some good-looking editor highlighting colour schemes and CSS for the HTML output. So I contacted Chen Luo and asked whether I could re-distribute his themes and styles. The conversion went like this:
 
 > Me: I’m building a Markdown editor, and I like the PEG highlighting styles in Mou a lot. Can I use them?
-> 
+>
 > Luo: Yes, you just need to put a notice that the CSS came from Mou, and attach a link to Mou’s homepage.
 
 You might notice that
@@ -44,7 +44,7 @@ Things went well until Luo found out (if that’s the right expression) about Ma
 <blockquote class="twitter-tweet"><p>那些 “Inspired by XXX”，克隆，并开放源代码的人都应该吃屎。他们应该将 Description 换成 “Stole the idea from XXX, and let everyone make crappy clones.”</p>&mdash; Sean Cheng (@remaerd) <a href="https://twitter.com/remaerd/statuses/484914820408279040">July 4, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-> Literal translation: Those who made clone and open-source softwares “inspired by XXX” should all got eat shit. They should change their descriptions to “Stole the idea from XXX, and let everyone make crappy clones.”
+> Literal translation: Those who made clone and open-source softwares “inspired by XXX” should all go eat shit. They should change their descriptions to “Stole the idea from XXX, and let everyone make crappy clones.”
 
 and changed the [project description](https://github.com/uranusjr/macdown/blob/master/README.md) accordingly.
 
