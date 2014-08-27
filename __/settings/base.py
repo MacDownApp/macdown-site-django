@@ -103,6 +103,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+# Sparkle
+
+SPARKLE_SYSTEM_PROFILES_VISIBLE = True
+
+
 # Ghostdown (for Sparkle-External)
 
 GHOSTDOWN_MARKDOWN_RENDERER = {
