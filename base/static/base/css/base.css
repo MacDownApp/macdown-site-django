@@ -71,6 +71,10 @@ footer .links > span:last-child:after {
     vertical-align: -.1em;
 }
 
+.paypal-box form, .paypal-box table {
+    width: 100%;
+}
+
 /* Override Foundation's code block styling to match Prism's */
 pre {
     background: #f5f2f0;
