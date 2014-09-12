@@ -1,13 +1,12 @@
 import os
 import re
-import mistune
 import yaml
 from django.utils.functional import cached_property
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.apps import apps
 from django.template import TemplateDoesNotExist
-from .utils import Renderer
+from base.markdown import render
 
 
 FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
@@ -61,10 +60,7 @@ class Post:
 
     @cached_property
     def rendered_content(self):
-        content = self.file_content[1]
-        renderer = Renderer()
-        rendered = mistune.markdown(content, renderer=renderer)
-        self.renderer = renderer
+        self.renderer, rendered = render(self.file_content[1])
         return rendered
 
     def get_absolute_url(self):

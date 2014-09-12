@@ -1,5 +1,4 @@
 import os
-import re
 import tempfile
 from django.test import TestCase
 from nose.tools import assert_equal, assert_raises

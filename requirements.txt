@@ -6,7 +6,6 @@ django-absolute
 django-appconf
 django-ghostdown
 django-grappelli
-Markdown
 mistune
 psycopg2
 pystache
