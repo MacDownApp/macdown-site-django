@@ -1,5 +1,7 @@
 {% extends 'pages/base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
 
 <div class="row">
@@ -106,3 +108,9 @@
 </div>
 
 {% endblock %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'pages/js/faq.js' %}"></script>
+{% endblock extra_js %}
