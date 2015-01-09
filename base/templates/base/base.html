@@ -45,7 +45,7 @@
     <ul class="right">
       {% if latest_version %}
       <li class="active show-for-large-up">
-        <a href="{{ latest_version.get_absolute_url }}" target="_blank">
+        <a href="{% url 'downloads:latest' %}" target="_blank">
           {% trans 'Download MacDown' %}
         </a>
       </li>

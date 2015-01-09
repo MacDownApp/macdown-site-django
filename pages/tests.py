@@ -11,7 +11,7 @@ class PageTests(TestCase):
     """
     fixtures = ('macdown', 'macdown_data')
 
-    def _check_download_buttons(self, tree, version):
+    def _check_download_buttons(self, tree):
         """Check that download links in the tree are correct.
 
         There should be at least one download link, and all links should point
@@ -20,11 +20,9 @@ class PageTests(TestCase):
         matches = CSSSelector('.download.button')(tree)
         assert_not_equal(len(matches), 0)
         for match in matches:
-            assert_equal(match.get('href'), version.get_absolute_url())
+            assert_equal(match.get('href'), '/download/latest/')
 
     def test_home(self):
-        latest_version = macdown.active_versions().latest()
-
         # Should load.
         response = self.client.get('/')
         assert_equal(response.status_code, 200)
@@ -32,26 +30,24 @@ class PageTests(TestCase):
 
         # Should contain download link in top navbar.
         for match in CSSSelector('.top-bar a')(tree):
-            if match.get('href') == latest_version.get_absolute_url():
+            if match.get('href') == '/download/latest/':
                 break
         else:   # This happens if no matches are found
             self.fail('Download link not found in top navbar.')
 
-        self._check_download_buttons(tree, latest_version)
-
     def test_features(self):
-        latest_version = macdown.active_versions().latest()
         response = self.client.get('/features/')
         assert_equal(response.status_code, 200)
+
         tree = lxml.html.fromstring(response.content)
-        self._check_download_buttons(tree, latest_version)
+        self._check_download_buttons(tree)
 
     def test_faq(self):
-        latest_version = macdown.active_versions().latest()
         response = self.client.get('/faq/')
         assert_equal(response.status_code, 200)
+
         tree = lxml.html.fromstring(response.content)
-        self._check_download_buttons(tree, latest_version)
+        self._check_download_buttons(tree)
 
 
 class NoDownloadLinkTests(TestCase):
