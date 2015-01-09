@@ -11,9 +11,11 @@ $(function () {
 $('.accordion .content').on('toggled', function () {
   $('.accordion .content').not(this).removeClass('active');   // Close others.
   var isActive = $(this).hasClass('active');
+  var currentTop = $('body').scrollTop();
   window.location.hash = isActive ? '#' + this.id : '';
-  if (isActive)
-    $('body').scrollTop($('body').scrollTop() - $(this).prev().height() * 2);
+  if (isActive)   // Scroll back a bit to reveal the title block.
+    currentTop = $('body').scrollTop() - $(this).prev().height() * 2;
+  $('body').scrollTop(currentTop);
 });
 
 })(jQuery);
