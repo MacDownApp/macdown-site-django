@@ -49,7 +49,7 @@
       <dd class="accordion-navigation">
         <a href="#gfm">Do You Support GFM?</a>
         <div id="gfm" class="content">
-          <p><a href="https://github.github.com/github-flavored-markdown/">GFM</a> (GitHub Flavoured Markdown) is a mix of standard Markdown, and some non-standard syntaxes that add additional functionalities and/or more ease for a particular group of people to write. MacDown provides lots of switches to let you choose what non-standard syntax(es) you want to use, and you can get almost all features in GFM if you configure them correctly. Check out the <a href="{% url 'pages:features' %}">Features</a> page to find out what extensions MacDown provides.</p>
+          <p><a href="https://github.github.com/github-flavored-markdown/">GFM</a> (GitHub Flavoured Markdown) is a mix of standard Markdown, and some non-standard syntaxes that add additional functionalities and/or more ease for a particular group of people to write. MacDown provides lots of switches to let you choose what non-standard syntax(es) you want to use, and you can get almost all features in GFM if you configure them correctly. Check out the <a href="{% url 'pages:page' 'features' %}">Features</a> page to find out what extensions MacDown provides.</p>
 
           <p>MacDown can be compatible to GFM, except for some minor structural differences in the resulting HTML, by enabling (only) the follwing options in the “Markdown” preference pane:</p>
 
@@ -76,7 +76,7 @@
         <div id="question" class="content">
           <p>You can report any issues you encountered with MacDown at the project’s <a href="https://github.com/uranusjr/macdown/issues">GitHub issue page</a>. Suggestions are also welcomed. If it is about this <em>site</em>, not MacDown itself, you can report them <a href="https://github.com/uranusjr/macdown-site/issues">here</a> instead. Please feel free to offer any advices, or send me a pull request with your implementation.</p>
 
-          <p>There’s one exception to this: MacDown does not accept new code block syntax highlighting rules. Refer to the <a href="{% url 'pages:features' %}#syntax_highlighting_contributing">relevant section</a> for more information.</p>
+          <p>There’s one exception to this: MacDown does not accept new code block syntax highlighting rules. Refer to the <a href="{% url 'pages:page' 'features' %}#syntax_highlighting_contributing">relevant section</a> for more information.</p>
         </div>
       </dd>
     </dl>

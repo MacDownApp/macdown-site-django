@@ -30,8 +30,8 @@
   </ul>
   <section class="top-bar-section">
     <ul class="left">
-      <li><a href="{% url 'pages:features' %}">{% trans 'Features' %}</a></li>
-      <li><a href="{% url 'pages:faq' %}">{% trans 'FAQ' %}</a></li>
+      <li><a href="{% url 'pages:page' 'features' %}">{% trans 'Features' %}</a></li>
+      <li><a href="{% url 'pages:page' 'faq' %}">{% trans 'FAQ' %}</a></li>
       <li><a href="{% url 'blog:list' %}">{% trans 'Blog' %}</a></li>
       <li class="has-dropdown">
         <a href="{% url 'history:all' %}">{% trans 'History' %}</a>
