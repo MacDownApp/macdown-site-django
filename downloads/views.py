@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.views.generic import RedirectView, ListView
+from django.views.generic import RedirectView
 from sparkle.models import Version
 from base.models import macdown
 
