@@ -53,9 +53,7 @@ def get_prism_languages():
     components = json.loads(components_str)
 
     languages = components['languages']
-    del languages['meta']
-    language_ids = [k for k in languages.keys() if not k.endswith('-extras')]
-    return language_ids
+    return languages
 
 
 def get_language_aliases():
@@ -101,7 +99,9 @@ LANGUAGE_INFO_CACHE = None
 
 def get_language_infos():
     if LANGUAGE_INFO_CACHE is None:
-        infos = {lang: '' for lang in get_prism_languages()}
+        languages = get_prism_languages()
+        del languages['meta']
+        infos = {lang: '' for lang in languages if not lang.endswith('-extras')}
 
         aliases = get_language_aliases()
         infos.update({
