@@ -1,9 +1,14 @@
 import lxml.html
 from lxml.cssselect import CSSSelector
-from django.test import TestCase
 from nose.tools import assert_equal, assert_not_equal
+
+from django.test import TestCase
+
 from sparkle.models import Version
+
 from base.models import macdown
+
+from .utils import get_language_info
 
 
 class PageTests(TestCase):
