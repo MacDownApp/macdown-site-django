@@ -8,8 +8,6 @@ from sparkle.models import Version
 
 from base.models import macdown
 
-from .utils import get_language_info
-
 
 class PageTests(TestCase):
     """Tests for page loading.
