@@ -5,7 +5,7 @@ SECRET_KEY = get_env_var('DJANGO_SECRET_KEY')
 
 DATABASES['default'] = dj_database_url.config()
 
-ALLOWED_HOSTS = ['macdown.uranusjr.com', 'macdown.herokuapp.com']
+ALLOWED_HOSTS = ['macdown.uranusjr.com', 'macdown.herokuapp.com', '*']
 
 STATIC_ROOT = 'static'
 
