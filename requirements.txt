@@ -1,4 +1,3 @@
-git+https://github.com/uranusjr/django-sparkle-external.git
 cython
 django>=1.7,<1.8
 dj-database-url
