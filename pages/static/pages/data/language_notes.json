@@ -11,5 +11,9 @@
     "nasm": "The Netwide Assembler.",
     "objectivec": "Objective-C.",
     "python": "Python 2.",
-    "swift": "Apple’s Swift programming language. <em>Not</em> <a href=\"http://swift-lang.org/\">the parallel scripting language</a>."
+    "sas": "<a href=\"https://en.wikipedia.org/wiki/SAS_language\">SAS</a>. <em>Not</em> an alias to <code>sass</code>.",
+    "sass": "SASS (SASS)",
+    "scss": "SASS (SCSS)",
+    "swift": "Apple’s Swift programming language. <em>Not</em> <a href=\"http://swift-lang.org/\">the parallel scripting language</a>.",
+    "yaml": "YAML"
 }

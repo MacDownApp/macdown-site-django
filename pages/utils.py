@@ -21,10 +21,7 @@ def get_endpoint(path, params=None):
     return json.loads(response.read().decode('utf8'))
 
 
-def get_prism_languages():
-    """Use the GitHub API to get a list of currently contained Prism languages.
-    """
-    # Get latest stable tag.
+def get_latest_tag():
     tag_data_list = get_endpoint('/repos/uranusjr/macdown/tags')
     tag = None
     for tag_data in tag_data_list:
@@ -33,24 +30,36 @@ def get_prism_languages():
             tag = tag_name
             break
     assert tag is not None
+    return tag
 
+
+def download_endpoint(endpoint, ref, encoding='utf-8'):
+    data = get_endpoint(endpoint, params={'ref': ref})
+    content_str = base64.b64decode(data['content']).decode(encoding)
+    return content_str
+
+
+def get_prism_languages():
+    """Use the GitHub API to get a list of currently contained Prism languages.
+    """
     # Get Git URL of Prism submodule at the tag.
     data = get_endpoint(
         '/repos/uranusjr/macdown/contents/Dependency/prism',
-        params={'ref': tag},
+        params={'ref': get_latest_tag()},
     )
-    sha = data['sha']
-
-    data = get_endpoint(
-        '/repos/PrismJS/prism/contents/components.js',
-        params={'ref': sha},
+    components_str = download_endpoint(
+        endpoint='/repos/PrismJS/prism/contents/components.js',
+        ref=data['sha'],
     )
-    components_str = base64.b64decode(data['content']).decode('utf8')
     # Make this string JSON-compatible.
     components_str = components_str[
         components_str.find('{'):components_str.rfind('}') + 1
     ]
-    components = json.loads(components_str)
+    components_str_lines = [
+        line for line in components_str.splitlines(True)
+        if not line.strip().startswith('//')
+    ]
+    components = json.loads(''.join(components_str_lines))
 
     languages = components['languages']
     return languages
@@ -59,25 +68,15 @@ def get_prism_languages():
 def get_language_aliases():
     """Get a list of MacDown-maintained language aliases.
     """
-    # Currently hard-coded. We need to make this a JSON file in MacDown repo
-    # in the future.
-    return {
-        'c++': 'cpp',
-        'coffee': 'coffeescript',
-        'coffee-script': 'coffeescript',
-        'cs': 'csharp',
-        'html': 'markup',
-        'jl': 'julia',
-        'js': 'javascript',
-        'json': 'javascript',
-        'obj-c': 'objectivec',
-        'objc': 'objectivec',
-        'objective-c': 'objectivec',
-        'py': 'python',
-        'rb': 'ruby',
-        'sh': 'bash',
-        'xml': 'markup',
-    }
+    info_str = download_endpoint(
+        endpoint=(
+            '/repos/uranusjr/macdown/contents/MacDown/Resources/'
+            'syntax_highlighting.json'
+        ),
+        ref=get_latest_tag(),
+    )
+    info = json.loads(info_str)
+    return info['aliases']
 
 
 def get_language_notes():
