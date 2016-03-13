@@ -4,7 +4,7 @@ author: Tzu-ping Chung
 published_at: 2014-08-05
 ---
 
-MacDown 0.2.2 is just out of the door. This is mainly a bug-fixing release, correcting a very serious bug that causes MacDown to crash continuously on some machines, and bahave stragely on others. I had been unable to reproduce the problem (and still can’t), but thanks to [Zachary Alex Stern’s report](https://github.com/uranusjr/macdown/issues/102) it is identified as a resigin issue on high-resolution displays (including Retina Macs, Apple Cinema Display, and other similar devices). The fix comes from wenbi. A big thank you to all that involved in this, and sorry to everyone affected by the issue.
+MacDown 0.2.2 is just out of the door. This is mainly a bug-fixing release, correcting a very serious bug that causes MacDown to crash continuously on some machines, and bahave stragely on others. I had been unable to reproduce the problem (and still can’t), but thanks to [Zachary Alex Stern’s report](https://github.com/MacDownApp/macdown/issues/102) it is identified as a resigin issue on high-resolution displays (including Retina Macs, Apple Cinema Display, and other similar devices). The fix comes from wenbi. A big thank you to all that involved in this, and sorry to everyone affected by the issue.
 
 But the post is not about that. Well, not mainly, at least. Although 0.2.2 is a bug-fixing release, I’ve added some improvement as well, most importantly support for table of content.
 

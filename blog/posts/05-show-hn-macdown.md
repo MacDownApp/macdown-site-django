@@ -4,7 +4,7 @@ author: Tzu-ping Chung
 published_at: 2014-08-25 18:00:00
 ---
 
-MacDown showed up on HackerNews yesterday [again](https://news.ycombinator.com/item?id=7946786). This time as a [Show HN](https://news.ycombinator.com/item?id=8217360)—Wait, I though Show HN is for sharing [something that you’ve made](https://news.ycombinator.com/showhn.html)? I don’t recall myself posting anything on HackerNews. Ah well, I get the [clicks](https://twitter.com/uranusjr/status/503389840008687616/photo/1), and that certainly isn’t something to complain about.
+MacDown showed up on HackerNews yesterday [again](https://news.ycombinator.com/item?id=7946786). This time as a [Show HN](https://news.ycombinator.com/item?id=8217360)—Wait, I though Show HN is for sharing [something that you’ve made](https://news.ycombinator.com/showhn.html)? I don’t recall myself posting anything on HackerNews. Ah well, I get the [clicks](https://twitter.com/MacDownApp/status/503389840008687616/photo/1), and that certainly isn’t something to complain about.
 
 Anyway. There seems to be some confusion about the origin of MacDown, and its relationship (if there is one) to Mou. I’ll try to go through some things that happened in chronological order so that you might get a better idea why things are how they are now.
 
@@ -46,7 +46,7 @@ Things went well until Luo found out (if that’s the right expression) about Ma
 
 > Literal translation: Those who clone and open-source softwares “inspired by XXX” should all go eat shit. They should change their descriptions to “Stole the idea from XXX, and let everyone make crappy clones.”
 
-and changed the [project description](https://github.com/uranusjr/macdown/blob/master/README.md) accordingly.
+and changed the [project description](https://github.com/MacDownApp/macdown/blob/master/README.md) accordingly.
 
 And that’s the end. I guess. MacDown is still fundamentally the same with Mou—they are both OS X-specific Markdown editors with an instant preview pane that can be styled with CSS, and offers syntax highlighting in the editor. But so are a bunch of other softwares—Just search for “Markdown” in the App Store. At least my own crappy clone has unique features Mou doesn’t offer, and they are useful to some people, including myself. I’m fine with just that.
 

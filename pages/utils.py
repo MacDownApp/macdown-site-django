@@ -22,7 +22,7 @@ def get_endpoint(path, params=None):
 
 
 def get_latest_tag():
-    tag_data_list = get_endpoint('/repos/uranusjr/macdown/tags')
+    tag_data_list = get_endpoint('/repos/MacDownApp/macdown/tags')
     tag = None
     for tag_data in tag_data_list:
         tag_name = tag_data['name']
@@ -44,7 +44,7 @@ def get_prism_languages():
     """
     # Get Git URL of Prism submodule at the tag.
     data = get_endpoint(
-        '/repos/uranusjr/macdown/contents/Dependency/prism',
+        '/repos/MacDownApp/macdown/contents/Dependency/prism',
         params={'ref': get_latest_tag()},
     )
     components_str = download_endpoint(
@@ -70,7 +70,7 @@ def get_language_aliases():
     """
     info_str = download_endpoint(
         endpoint=(
-            '/repos/uranusjr/macdown/contents/MacDown/Resources/'
+            '/repos/MacDownApp/macdown/contents/MacDown/Resources/'
             'syntax_highlighting.json'
         ),
         ref=get_latest_tag(),

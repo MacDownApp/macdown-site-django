@@ -21,7 +21,7 @@ Built-in math syntax also opens the door to a new possibility: server-side math 
 However, the new math rendering behaviour is a little bit different from the one used previously. The new math syntax adds a feature inspired by [kramdown] called **context-based inline math detection**. Previously, if you write something like this:
 
     Lorem ipsum $$ y = ax + b $$ dolor sit amet…
-    
+
 You will get two paragraphs, separated by a math block. Like this:
 
 ![](http://d.pr/i/1gobr+)
@@ -54,7 +54,7 @@ There are plans to add more features to this utility, too. If you want to know m
 
 ## Enjoy!
 
-There are also various bug-fixes and minor improvements besides the aforementioned ones. Checkout the release notes! If you have any questions and suggestions, join our [Gitter-powered chatroom](https://gitter.im/uranusjr/macdown). Or you can just open a new issue on [GitHub](https://github.com/uranusjr/macdown) (but please make sure it’s not already posted yet!), or, even better, open a pull request.
+There are also various bug-fixes and minor improvements besides the aforementioned ones. Checkout the release notes! If you have any questions and suggestions, join our [Gitter-powered chatroom](https://gitter.im/MacDownApp/macdown). Or you can just open a new issue on [GitHub](https://github.com/MacDownApp/macdown) (but please make sure it’s not already posted yet!), or, even better, open a pull request.
 
 But first, please enjoy the new MacDown. Believe me, it is good. :D
 

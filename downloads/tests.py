@@ -25,7 +25,7 @@ class DownloadTests(TestCase):
         assert_equal(response.status_code, 302)
         assert_equal(
             response['Location'],
-            'https://github.com/uranusjr/macdown/releases/download/v0.1.2/'
+            'https://github.com/MacDownApp/macdown/releases/download/v0.1.2/'
             'MacDown.app.zip',
         )
 

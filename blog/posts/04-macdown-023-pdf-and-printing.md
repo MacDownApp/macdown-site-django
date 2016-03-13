@@ -8,13 +8,13 @@ MacDown 0.2.3 is the third bug-fixing release for 0.2, plus a few extra goodies.
 
 ## PDF Export
 
-From pretty much the beginning of the first MacDown release, there have been suggestions for adding a “Export to PDF” menu item to go along with the existing “Export to HTML” one. [Those](https://github.com/uranusjr/macdown/issues/24) were [rejected](https://github.com/uranusjr/macdown/issues/31), mainly because *OS X has PDF generation built-in*. If you navigate to **File → Print…**, you will find a “PDF” button at the bottom left corner, and clicking it reveals a few options…
+From pretty much the beginning of the first MacDown release, there have been suggestions for adding a “Export to PDF” menu item to go along with the existing “Export to HTML” one. [Those](https://github.com/MacDownApp/macdown/issues/24) were [rejected](https://github.com/MacDownApp/macdown/issues/31), mainly because *OS X has PDF generation built-in*. If you navigate to **File → Print…**, you will find a “PDF” button at the bottom left corner, and clicking it reveals a few options…
 
 ![PDF options in OS X Print dialog.](http://d.pr/i/6cJp+)
 
 …including **Save as PDF**. This can be used to export PDF, so there really is no need for individual OS X applications (as long as they use the system printing dialog) to implement a seperate export option, unless they provide additional export options, such as those provided by Pages, Keynote, etc..
 
-But I was a little surprised when I get asked again. And again. And there’s a [pull request](https://github.com/uranusjr/macdown/pull/42) about it. And then there is a [review](https://medium.com/@Sarthaksharma0/mou-v-s-macdown-mac-ac35ecddae45) with this line:
+But I was a little surprised when I get asked again. And again. And there’s a [pull request](https://github.com/MacDownApp/macdown/pull/42) about it. And then there is a [review](https://medium.com/@Sarthaksharma0/mou-v-s-macdown-mac-ac35ecddae45) with this line:
 
 > Mou can export as PDF and HTML but Macdown can export in HTML format only.
 
@@ -28,14 +28,14 @@ The PDF export works similarly as its HTML counterpart, but will always match st
 
 ## Other Improvements
 
-The HTML export options now have [more sensible defaults](https://github.com/uranusjr/macdown/issues/118), based on current application preferences. This should make exporting routines easier.
+The HTML export options now have [more sensible defaults](https://github.com/MacDownApp/macdown/issues/118), based on current application preferences. This should make exporting routines easier.
 
-And if you’re more into copying content directly from preview, instead of exporting the whole file, copy-pasting to web browsers (other than Safari, which already works) should now [preserve styles in the preview](https://github.com/uranusjr/macdown/issues/115).
+And if you’re more into copying content directly from preview, instead of exporting the whole file, copy-pasting to web browsers (other than Safari, which already works) should now [preserve styles in the preview](https://github.com/MacDownApp/macdown/issues/115).
 
 The bundled Prism is also upgraded, meaning that you’ll get more language definitions for syntax highlighting, including Haskell, LaTeX, and Twig. I’ll update the [full language list](/features/) on the site later; you can also check out [Prism’s documentation](http://prismjs.com/test.html).
 
 ---
 
-As always, you can grab the update in-app when notified, or [download](/download/v0.2.3/) it directly now. A full list of changes in this version is bundled with the in-app update. You can also view it on the Version [History](/history/stable/#version_372) page, or on [GitHub](https://github.com/uranusjr/macdown/releases/tag/v0.2.3).
+As always, you can grab the update in-app when notified, or [download](/download/v0.2.3/) it directly now. A full list of changes in this version is bundled with the in-app update. You can also view it on the Version [History](/history/stable/#version_372) page, or on [GitHub](https://github.com/MacDownApp/macdown/releases/tag/v0.2.3).
 
 Enjoy!
