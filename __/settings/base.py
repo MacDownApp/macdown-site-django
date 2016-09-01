@@ -14,10 +14,15 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 
-def get_env_var(key):
+RAISE = object()
+
+
+def get_env_var(key, default=RAISE):
     try:
         return os.environ[key]
     except KeyError:
+        if default is not RAISE:
+            return default
         raise ImproperlyConfigured(
             'Environment variable {key} required.'.format(key=key)
         )
