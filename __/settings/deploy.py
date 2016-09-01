@@ -1,7 +1,7 @@
 from .base import *     # noqa
 import dj_database_url
 
-DEBUG = get_env_var('DJANGO_DEBUG', True)
+DEBUG = get_env_var('DJANGO_DEBUG', False)
 
 SECRET_KEY = get_env_var('DJANGO_SECRET_KEY')
 
